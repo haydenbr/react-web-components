@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Components in React</title>
+
+    <link rel="stylesheet" href="main.css">
+
+    <script type="text/javascript" src="plugin/markdown/marked.js"></script>
+    <script type="text/javascript" src="plugin/highlight/highlight.js"></script>
+    <script type="text/javascript" src="plugin/notes/notes.js"></script>
+  </head>
+  <body>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="main.js"></script>
+
+    <div class="reveal">
+      <div class="slides">
+        <section
+					class="intro-slide title-slide"
+					data-background-image="./assets/images/dark-bg.png"
+        >
+          <div class="top-row">
+            <div class="title">Web Components in React</div>
+					</div>
+					<img class="cover" src="./assets/images/strong-bad-email.png">
+          <div class="presenter">
+            <div class="avatar-container">
+              <div class="avatar"></div>
+            </div>
+            <div>
+              <div>Hayden Braxton</div>
+              <a target="_blank" href="https://twitter.com/hayden_dev">@hayden_dev</a>
+            </div>
+          </div>
+				</section>
+
+        <section
+          class="content-slide"
+          data-background-image="./assets/images/dark-bg.png"
+        >
+					Slides: <a href="https://github.com/haydenbr/anatomy-of-a-web-component">github.com/haydenbr/anatomy-of-a-web-component</a>
+				</section>
+				
+        <section data-background-image="./assets/images/dark-bg.png">
+					<div class="section-title">What are Web Components?</div>
+					
+          <aside class="notes">
+            <ul>
+							<li>Collection of web standards</li>
+							<li>Mean by component</li>
+							<li>forerunner: bootstrap (disconnected css, html, javascript)</li>
+            </ul>
+          </aside>
+				</section>
+
+        <section data-background-image="./assets/images/dark-bg.png">
+          <div class="section-title">Why should I care?</div>
+				</section>
+
+        <section
+          class="content-slide"
+          data-background-image="./assets/images/dark-bg.png"
+        >
+					<div class="page-title">Why should I care?</div>
+
+					<ul>
+						<li class="fragment">Cross-compatability</li>
+						<li class="fragment">Ship less code</li>
+						<li class="fragment">Convenience</li>
+						<li class="fragment">Web components are coming ...</li>
+					</ul>
+
+          <aside class="notes">
+            <ul>
+							<li>Compatability</li>
+							<li>Less code: browser understands component</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section
+          class="content-slide"
+          data-background-image="./assets/images/dark-bg.png"
+        >
+					<div class="page-title">The Web Standards</div>
+
+					<ul>
+						<li class="fragment">Custom Elements</li>
+						<li class="fragment">Shadow DOM (CSS variables)</li>
+						<li class="fragment">HTML templates</li>
+						<li class="fragment">HTML imports</li>
+					</ul>
+
+          <aside class="notes">
+            <ul>
+							<li>elements: meat and potatoes</li>
+							<li>shadow: bullet-proof / modular</li>
+							<li>templates: smaller scope</li>
+							<li>imports: defunct, gross</li>
+            </ul>
+          </aside>
+				</section>
+
+        <section data-background-image="./assets/images/dark-bg.png">
+          <div class="section-title">What about browser support?</div>
+				</section>
+
+        <section
+          class="image-slide"
+          data-background-image="./assets/images/dark-bg.png"
+        >
+          <img src="./assets/images/browser-support.png">
+          <aside class="notes">
+            <ul>
+							<li>Edge: under consideration</li>
+							<li>Firefox: experimental flags, v63</li>
+							<li>Imports: Firefox, Webkit wont support</li>
+            </ul>
+          </aside>
+				</section>
+
+        <section data-background-image="./assets/images/dark-bg.png">
+          <div class="section-title">Examples!</div>
+				</section>
+
+        <section
+          class="content-slide"
+          data-background-image="./assets/images/dark-bg.png"
+        >
+					<div class="page-title">bob-is-cool</div>
+
+					<bob-is-cool id="bob"></bob-is-cool>
+				</section>
+				
+        <section
+          class="content-slide"
+          data-background-image="./assets/images/dark-bg.png"
+        >
+					<div class="page-title">cool-tab</div>
+
+					<cool-tab id="miles-davis">
+						<cool-tab-button value="bob">Bob</cool-tab-button>
+						<cool-tab-button value="bill">Bill</cool-tab-button>
+						<cool-tab-button value="sally">Sally</cool-tab-button>
+					</cool-tab>
+				</section>
+
+        <section
+          class="content-slide"
+          data-background-image="./assets/images/dark-bg.png"
+        >
+					<div class="page-title">Tools</div>
+
+					<div class="row">
+						<img style="width: 150px; margin-right: 20px;" src="./assets/images/polymer.png"><a href="https://github.com/Polymer" target="_blank">Polymer</a>
+					</div>
+					<div class="row">
+						<img style="width: 150px; margin-right: 20px;" src="./assets/images/stencil.png"><a href="https://github.com/ionic-team/stencil" target="_blank">Stencil</a>
+					</div>
+					<div class="row">
+						<img style="width: 150px; margin-right: 20px;" src="./assets/images/skatejs.png"><a href="https://github.com/skatejs/skatejs" target="_blank">SkateJS</a>
+					</div>
+				</section>
+
+        <section
+          class="content-slide"
+          data-background-image="./assets/images/dark-bg.png"
+        >
+					<div class="page-title">Resources</div>
+
+					<a href="https://developers.google.com/web/fundamentals/web-components/" target="_blank">Guide: Google Web Fundamentals</a>
+					<br>
+					<a href="https://www.youtube.com/watch?v=AS9CMVU4XhI" target="_blank">Use case: Ola</a>
+					<br>
+					<a href="https://medium.com/samsung-internet-dev/lessons-learned-making-our-app-with-web-components-bf55379cfcda" target="_blank">Use Case: Samsung Internet</a>
+					<br>
+					<a href="https://github.com/webcomponents/webcomponentsjs" target="_blank">Polyfills</a>
+					<br>
+					<a href="https://github.com/ionic-team/ionic" target="_blank">Ionic Framework</a>
+					<br>
+					<a href="https://caniuse.com/" target="_blank">caniuse</a>
+					<br>
+					<a href="https://github.com/material-components/material-components-web-components">Material Design Components as Web Components</a>
+				</section>
+
+        <section
+          class="content-slide"
+          data-background-image="./assets/images/dark-bg.png"
+        >
+          <div>Thanks!</div>
+          <a id="banana" target="_blank" href="http://bitly.com/98K8eH">
+            <img src="./assets/images/banana.gif">
+          </a>
+
+          <div style="margin-bottom: 20px">Drop me a line!</div>
+          <div><a target="_blank" href="https://twitter.com/hayden_dev">@hayden_dev</a></div>
+          <div><a target="_blank" href="https://github.com/haydenbr">github.com/haydenbr</a></div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
