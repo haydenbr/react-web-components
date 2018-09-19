@@ -23,10 +23,12 @@
 					class="intro-slide title-slide"
 					data-background-image="./assets/images/dark-bg.png"
         >
-          <div class="top-row">
+          <div class="row">
             <div class="title">Web Components in React</div>
 					</div>
-					<img class="cover" src="./assets/images/strong-bad-email.png">
+					<div class="row">
+						<img class="cover" src="./assets/images/strong-bad-email.png">
+					</div>
           <div class="presenter">
             <div class="avatar-container">
               <div class="avatar"></div>
@@ -42,19 +44,17 @@
           class="content-slide"
           data-background-image="./assets/images/dark-bg.png"
         >
-					Slides: <a href="https://github.com/haydenbr/anatomy-of-a-web-component">github.com/haydenbr/anatomy-of-a-web-component</a>
+					Slides: <a href="https://github.com/haydenbr/react-web-componentst">github.com/haydenbr/react-web-components</a>
+
+					<pre>
+						<code class="bash" data-trim contenteditable>
+							docker run -p 3000:3000 haydenbr/react-web-components
+						</code>
+					</pre>
 				</section>
 				
         <section data-background-image="./assets/images/dark-bg.png">
 					<div class="section-title">What are Web Components?</div>
-					
-          <aside class="notes">
-            <ul>
-							<li>Collection of web standards</li>
-							<li>Mean by component</li>
-							<li>forerunner: bootstrap (disconnected css, html, javascript)</li>
-            </ul>
-          </aside>
 				</section>
 
         <section data-background-image="./assets/images/dark-bg.png">
@@ -68,19 +68,18 @@
 					<div class="page-title">Why should I care?</div>
 
 					<ul>
-						<li class="fragment">Cross-compatability</li>
-						<li class="fragment">Ship less code</li>
-						<li class="fragment">Convenience</li>
+						<li class="fragment">cross-framework compatability</li>
+						<li class="fragment">smaller framework dependency</li>
+						<li class="fragment">ship less code</li>
+						<li class="fragment">&lt;div&gt; soup and the Bootstrap problem</li>
+						<li class="fragment">dynamic content</li>
 						<li class="fragment">Web components are coming ...</li>
 					</ul>
-
-          <aside class="notes">
-            <ul>
-							<li>Compatability</li>
-							<li>Less code: browser understands component</li>
-            </ul>
-          </aside>
         </section>
+
+				<section data-background-image="./assets/images/dark-bg.png">
+          <div class="section-title">Are they production ready?</div>
+				</section>
 
         <section
           class="content-slide"
@@ -94,15 +93,6 @@
 						<li class="fragment">HTML templates</li>
 						<li class="fragment">HTML imports</li>
 					</ul>
-
-          <aside class="notes">
-            <ul>
-							<li>elements: meat and potatoes</li>
-							<li>shadow: bullet-proof / modular</li>
-							<li>templates: smaller scope</li>
-							<li>imports: defunct, gross</li>
-            </ul>
-          </aside>
 				</section>
 
         <section data-background-image="./assets/images/dark-bg.png">
@@ -114,17 +104,11 @@
           data-background-image="./assets/images/dark-bg.png"
         >
           <img src="./assets/images/browser-support.png">
-          <aside class="notes">
-            <ul>
-							<li>Edge: under consideration</li>
-							<li>Firefox: experimental flags, v63</li>
-							<li>Imports: Firefox, Webkit wont support</li>
-            </ul>
-          </aside>
 				</section>
 
         <section data-background-image="./assets/images/dark-bg.png">
-          <div class="section-title">Examples!</div>
+					<div class="section-title">Demos!</div>
+					<img src="./assets/images/live-hardcore.gif">
 				</section>
 
         <section
@@ -133,7 +117,11 @@
         >
 					<div class="page-title">bob-is-cool</div>
 
-					<bob-is-cool id="bob"></bob-is-cool>
+					<bob-is-cool id="bob">
+						<small>message in the default slot</small>
+						<div slot="secondary-slot">Chili cheese dogs!</div>
+						<p slot="secondary-slot">Monkey Man Josh</p>
+					</bob-is-cool>
 				</section>
 				
         <section
@@ -142,10 +130,11 @@
         >
 					<div class="page-title">cool-tab</div>
 
-					<cool-tab id="miles-davis">
+					<cool-tab id="miles-davis" value="bob">
 						<cool-tab-button value="bob">Bob</cool-tab-button>
 						<cool-tab-button value="bill">Bill</cool-tab-button>
 						<cool-tab-button value="sally">Sally</cool-tab-button>
+						<cool-tab-button value="mary">Mary</cool-tab-button>
 					</cool-tab>
 				</section>
 
@@ -153,17 +142,41 @@
           class="content-slide"
           data-background-image="./assets/images/dark-bg.png"
         >
-					<div class="page-title">Tools</div>
+					<div class="page-title">Stencil</div>
 
-					<div class="row">
-						<img style="width: 150px; margin-right: 20px;" src="./assets/images/polymer.png"><a href="https://github.com/Polymer" target="_blank">Polymer</a>
-					</div>
 					<div class="row">
 						<img style="width: 150px; margin-right: 20px;" src="./assets/images/stencil.png"><a href="https://github.com/ionic-team/stencil" target="_blank">Stencil</a>
 					</div>
-					<div class="row">
-						<img style="width: 150px; margin-right: 20px;" src="./assets/images/skatejs.png"><a href="https://github.com/skatejs/skatejs" target="_blank">SkateJS</a>
-					</div>
+				</section>
+
+        <section
+          class="image-slide"
+          data-background-image="./assets/images/dark-bg.png"
+				>
+					<a href="https://twitter.com/maxlynch/status/1041721236102017024" target="_blank">
+						<img src="./assets/images/max-1.png" />
+					</a>
+				</section>
+
+        <section
+          class="image-slide"
+          data-background-image="./assets/images/dark-bg.png"
+				>
+					<a href="https://twitter.com/maxlynch/status/1041794147265531904" target="_blank">
+						<img src="./assets/images/max-2.png" />
+					</a>
+				</section>
+
+        <section
+          class="content-slide"
+          data-background-image="./assets/images/dark-bg.png"
+        >
+					<a href="https://custom-elements-everywhere.com/" target="_blank">Custom Elements Everywhere</a>
+				</section>
+
+        <section data-background-image="./assets/images/dark-bg.png">
+					<div class="section-title">React Demo!</div>
+					<img src="./assets/images/live-hardcore.gif">
 				</section>
 
         <section
@@ -172,11 +185,11 @@
         >
 					<div class="page-title">Resources</div>
 
+					<a href="https://www.webcomponents.org/specs" target="_blank">WebComponents.org: The Specs</a>
+					<br>
 					<a href="https://developers.google.com/web/fundamentals/web-components/" target="_blank">Guide: Google Web Fundamentals</a>
 					<br>
 					<a href="https://www.youtube.com/watch?v=AS9CMVU4XhI" target="_blank">Use case: Ola</a>
-					<br>
-					<a href="https://medium.com/samsung-internet-dev/lessons-learned-making-our-app-with-web-components-bf55379cfcda" target="_blank">Use Case: Samsung Internet</a>
 					<br>
 					<a href="https://github.com/webcomponents/webcomponentsjs" target="_blank">Polyfills</a>
 					<br>
@@ -184,7 +197,9 @@
 					<br>
 					<a href="https://caniuse.com/" target="_blank">caniuse</a>
 					<br>
-					<a href="https://github.com/material-components/material-components-web-components">Material Design Components as Web Components</a>
+					<a href="https://medium.com/@oneeezy/frameworks-vs-web-components-9a7bd89da9d4" target="_blank">Blog: Frameworks vs Web Components</a>
+					<br>
+					<a href="https://custom-elements-everywhere.com/" target="_blank">Custom Elements Everywhere</a>
 				</section>
 
         <section

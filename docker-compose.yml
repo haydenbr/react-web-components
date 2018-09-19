@@ -2,14 +2,13 @@ version: '3.1'
 
 services:
   slides:
-    image: 'haydenbr/anatomy-of-a-web-component'
+    image: 'haydenbr/react-web-components'
     build:
       context: '.'
       dockerfile: 'Dockerfile'
     ports:
       - 3000:3000
     volumes:
-      - ./dist:/opt/app/dist
       - ./jsconfig.json:/opt/app/jsconfig.json
       - ./package.json:/opt/app/package.json
       - ./postcss.config.js:/opt/app/postcss.config.js

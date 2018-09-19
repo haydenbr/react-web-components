@@ -1,17 +1,19 @@
 const template = document.createElement('template');
 const style = `
 :host {
+	--border-radius: 5px;
 	--border-width: 3px;
 	--color: #6f7dbc;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	align-items: center;
+	display: flex;
+	justify-content: center;
 }
 
 ::slotted(cool-tab-button) {
-	--tab-button-color: var(--color);
+	--tab-button-border-radius: var(--border-radius);
 	--tab-button-border-width: var(--border-width);
+	--tab-button-color: var(--color);
 }
 `;
 
@@ -24,7 +26,7 @@ class CoolTab extends HTMLElement {
 	constructor() {
 		super();
 
-		this._value = undefined;
+		this._readonlyValue = undefined;
 	}
 
 	connectedCallback() {
@@ -32,24 +34,20 @@ class CoolTab extends HTMLElement {
 		shadowRoot.appendChild(template.content.cloneNode(true));
 
 		this.addEventListener('tabselect', (event) => this.value = event.target.value);
-
-		setTimeout(() => this.updateTabs());
+		this.value = this.defaultValue;
+		setTimeout(() => this.render());
 	}
 
-	static get observedAttributes() {
-		return ['value'];
+	disconnectedCallback() {
+		this.removeEventListener('tabselect');
 	}
 
-	attributeChangedCallback(attrName, oldValue, newValue) {
-		if (oldValue === newValue) {
-			return;
-		}
-
-		this[attrName] = newValue;
+	get defaultValue() {
+		return this.getAttribute('value') || '';
 	}
 
 	get value() {
-		return this._value;
+		return this._readonlyValue;
 	}
 
 	set value(newValue) {
@@ -57,19 +55,21 @@ class CoolTab extends HTMLElement {
 			return;
 		}
 
-		this._value = newValue;
-		this.updateTabs();
-		this.dispatchEvent(new CustomEvent('tabchange', { bubbles: true }));
-		this.setAttribute('value', this.value);
-	}
-
-	updateTabs() {
-		this.tabButtons
-		.forEach((tab) => tab.selected = (tab.value === this.value));
+		this._readonlyValue = newValue;
+		this.render();
+		this.dispatchTabChange();
 	}
 
 	get tabButtons() {
 		return Array.from(this.querySelectorAll('cool-tab-button'));
+	}
+
+	dispatchTabChange() {
+		this.dispatchEvent(new CustomEvent('tabchange', { bubbles: true }));
+	}
+
+	render() {
+		this.tabButtons.forEach((tab) => tab.selected = (tab.value === this.value));
 	}
 }
 

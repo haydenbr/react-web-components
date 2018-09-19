@@ -14,7 +14,9 @@ RUN	apk add --update --no-cache --virtual .build-deps \
 WORKDIR /opt/app
 
 COPY package.json package.json
-RUN yarn && yarn cache clean && apk del .build-deps
+RUN yarn install && \
+		yarn cache clean && \
+		apk del .build-deps
 COPY src src
 
 EXPOSE 3000

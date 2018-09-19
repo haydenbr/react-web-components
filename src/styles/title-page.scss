@@ -28,8 +28,9 @@ section {
 			margin-bottom: 75px;
 		}
 
-		.top-row {
+		.row {
 			display: flex;
+			justify-content: center;
 		}
 
 		.title {
@@ -42,6 +43,9 @@ section {
 			display: flex;
 			align-items: center;
 			padding-left: 30px;
+			position: absolute;
+			bottom: -180px;
+			left: -40px;
 		}
 
 		.whale {
