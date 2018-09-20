@@ -8,6 +8,7 @@ const style = `
 	border: var(--tab-button-border-width) solid var(--tab-button-color);
 	display: block;
 	flex-grow: 1;
+	overflow: none;
 }
 
 :host(:not(:first-of-type)) {
@@ -33,16 +34,6 @@ const style = `
 	text-align: center;
 	user-select: none
 	transition: all 200ms ease-in-out;
-}
-
-:host(:first-of-type) #tab-inner {
-	border-top-left-radius: var(--tab-button-border-radius);
-	border-bottom-left-radius: var(--tab-button-border-radius);
-}
-
-:host(:last-of-type) #tab-inner {
-	border-top-right-radius: var(--tab-button-border-radius);
-	border-bottom-right-radius: var(--tab-button-border-radius);
 }
 
 #tab-inner[selected] {
@@ -102,6 +93,10 @@ class CoolTabButton extends HTMLElement {
 	}
 
 	render() {
+		if (!this.$tabInner) {
+			return;
+		}
+
 		if (this.selected) {
 			this.$tabInner.setAttribute('selected', '');
 		} else {

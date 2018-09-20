@@ -26,7 +26,7 @@ class CoolTab extends HTMLElement {
 	constructor() {
 		super();
 
-		this._readonlyValue = undefined;
+		this._value = undefined;
 	}
 
 	connectedCallback() {
@@ -47,7 +47,7 @@ class CoolTab extends HTMLElement {
 	}
 
 	get value() {
-		return this._readonlyValue;
+		return this._value;
 	}
 
 	set value(newValue) {
@@ -55,7 +55,7 @@ class CoolTab extends HTMLElement {
 			return;
 		}
 
-		this._readonlyValue = newValue;
+		this._value = newValue;
 		this.render();
 		this.dispatchTabChange();
 	}
