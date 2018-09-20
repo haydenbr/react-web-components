@@ -5,6 +5,16 @@ import CoolTabButton from './CoolTabButton';
 
 import './CoolTabDemo.css';
 
+import homestar from '../images/homestar.jpg';
+import marzipan from '../images/marzipan.png';
+import strongbad from '../images/sb-tech.png';
+
+const imageMap = {
+	homestar,
+	marzipan,
+	strongbad
+};
+
 class CoolTabDemo extends React.Component {
 	state = {
 		selectedTab: ''
@@ -14,6 +24,7 @@ class CoolTabDemo extends React.Component {
 		super(props);
 
 		this.onTabChange = this.onTabChange.bind(this);
+		this.getImage = this.getImage.bind(this);
 	}
 
 	onTabChange(event) {
@@ -21,14 +32,20 @@ class CoolTabDemo extends React.Component {
 		this.setState({ selectedTab });
 	}
 
+	getImage() {
+		return imageMap[this.state.selectedTab];
+	}
+
 	render() {
 		return (
 			<div className="tab-container">
 				<CoolTab onTabChange={this.onTabChange}>
-					<CoolTabButton value="bob">Bob</CoolTabButton>
-					<CoolTabButton value="sally">Sally</CoolTabButton>
-					<CoolTabButton value="jimmy">Jimmy</CoolTabButton>
+					<CoolTabButton value="homestar">Homestar</CoolTabButton>
+					<CoolTabButton value="marzipan">Marzipan</CoolTabButton>
+					<CoolTabButton value="strongbad">Strong Bad</CoolTabButton>
 				</CoolTab>
+
+				<img id="character-image" src={this.getImage()}/>
 			</div>
 		);
 	}

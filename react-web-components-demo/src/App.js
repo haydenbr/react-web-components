@@ -5,7 +5,6 @@ import Header from './components/Header';
 
 import 'examples';
 
-import './images/homestar.jpg';
 import CoolTabDemo from './components/CoolTabDemo';
 import CoolSideMenuDemo from './components/CoolSideMenuDemo';
 
