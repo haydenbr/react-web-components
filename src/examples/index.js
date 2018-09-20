@@ -1,3 +1,3 @@
-import './bob-is-cool.component';
-import './cool-tab-button.component';
-import './cool-tab.component';
+import './kitchen-sink-component';
+import './cool-tab-button-component';
+import './cool-tab-component';

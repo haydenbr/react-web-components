@@ -43,7 +43,7 @@ template.innerHTML = `
 // low presedence
 // light DOM vs shadow DOM
 
-class BobIsCool extends HTMLElement {
+class KitchenSink extends HTMLElement {
 	constructor() {
 		super();
 
@@ -108,4 +108,4 @@ class BobIsCool extends HTMLElement {
 	}
 }
 
-window.customElements.define('bob-is-cool', BobIsCool);
+window.customElements.define('kitchen-sink', KitchenSink);
