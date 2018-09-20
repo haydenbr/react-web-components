@@ -64,7 +64,7 @@ class CoolTabButton extends HTMLElement {
 
 		this._readonlyValue = this.getAttribute('value');
 		this.$tabInner = this.shadowRoot.querySelector('#tab-inner');
-		this.$tabInner.addEventListener('click', () => this.selected = true);
+		this.clickListener = this.$tabInner.addEventListener('click', () => this.selected = true);
 	}
 
 	get value() {

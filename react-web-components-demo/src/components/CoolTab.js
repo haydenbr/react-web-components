@@ -12,11 +12,11 @@ class CoolTab extends React.Component {
 	}
 
 	componentDidMount() {
-		this.nativeElement.addEventListener('tabchange', (event) => this.onTabChange(event));
+		this.tabChangeListener = this.nativeElement.addEventListener('tabchange', (event) => this.onTabChange(event));
 	}
 
 	componentWillUnmount() {
-		this.nativeElement.addEventListener('tabchange');
+		this.nativeElement.addEventListener('tabchange', this.tabChangeListener);
 	}
 
 	onTabChange(event) {

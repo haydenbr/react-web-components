@@ -33,13 +33,13 @@ class CoolTab extends HTMLElement {
 		const shadowRoot = this.attachShadow({ mode: 'open' });
 		shadowRoot.appendChild(template.content.cloneNode(true));
 
-		this.addEventListener('tabselect', (event) => this.value = event.target.value);
+		this.tabSelectListener = this.addEventListener('tabselect', (event) => this.value = event.target.value);
 		this.value = this.defaultValue;
 		setTimeout(() => this.render());
 	}
 
 	disconnectedCallback() {
-		this.removeEventListener('tabselect');
+		this.removeEventListener('tabselect', this.tabSelectListener);
 	}
 
 	get defaultValue() {

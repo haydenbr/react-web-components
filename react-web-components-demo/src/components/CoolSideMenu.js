@@ -23,13 +23,13 @@ class CoolSideMenu extends React.Component {
 	}
 
 	componentDidMount() {
-		this.nativeElement.addEventListener('menuopen', (event) => this.onMenuOpen(event));
-		this.nativeElement.addEventListener('menuclose', (event) => this.onMenuClose(event));
+		this.menuOpenListener = this.nativeElement.addEventListener('menuopen', (event) => this.onMenuOpen(event));
+		this.menuCloseListener = this.nativeElement.addEventListener('menuclose', (event) => this.onMenuClose(event));
 	}
 
 	componentWillUnmount() {
-		this.nativeElement.removeEventListener('menuopen');
-		this.nativeElement.removeEventListener('menuclose');
+		this.nativeElement.removeEventListener('menuopen', this.menuOpenListener);
+		this.nativeElement.removeEventListener('menuclose', this.menuCloseListener);
 	}
 
 	onMenuOpen(event) {

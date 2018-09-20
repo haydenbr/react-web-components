@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import CoolSideMenu from './CoolSideMenu';
 import CoolSideMenuTitle from './CoolSideMenuTitle';
@@ -38,9 +39,9 @@ class CoolSideMenuDemo extends React.Component {
 					<CoolSideMenuTitle>
 						Cool Menu
 					</CoolSideMenuTitle>
-					<a href="#">One</a>
-					<a href="#">Two</a>
-					<a href="#">Three</a>
+					<Link to="/page-one">One</Link>
+					<Link to="/page-two">Two</Link>
+					<Link to="/page-three">Three</Link>
 				</CoolSideMenu>
 
 				<button onClick={this.openMenu}>open menu</button>

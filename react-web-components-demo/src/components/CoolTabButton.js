@@ -13,11 +13,11 @@ class CoolTabButton extends React.Component {
 	}
 
 	componentDidMount() {
-		this.nativeElement.addEventListener('tabselect', (event) => this.onTabSelect(event));
+		this.tabSelectListener = this.nativeElement.addEventListener('tabselect', (event) => this.onTabSelect(event));
 	}
 
 	componentWillUnmount() {
-		this.nativeElement.addEventListener('tabselect');
+		this.nativeElement.addEventListener('tabselect', this.tabSelectListener);
 	}
 
 	onTabSelect(event) {
