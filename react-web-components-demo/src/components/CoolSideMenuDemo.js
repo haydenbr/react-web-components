@@ -39,6 +39,7 @@ class CoolSideMenuDemo extends React.Component {
 					<CoolSideMenuTitle>
 						Cool Menu
 					</CoolSideMenuTitle>
+					<Link to="/">Home</Link>
 					<Link to="/page-one">One</Link>
 					<Link to="/page-two">Two</Link>
 					<Link to="/page-three">Three</Link>

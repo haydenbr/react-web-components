@@ -12,8 +12,6 @@ import CoolSideMenuDemo from './components/CoolSideMenuDemo';
 function Home() {
 	return (
 		<div>
-			<Header />
-			<CoolSideMenuDemo />
 			<CoolTabDemo />
 		</div>
 	);
@@ -36,6 +34,8 @@ class App extends Component {
     return (
 			<Router>
 				<div>
+					<Header />
+					<CoolSideMenuDemo />
 					<Route exact path="/" component={Home}/>
 					<Route path="/page-one" component={PageOne} />
 					<Route path="/page-two" component={PageTwo} />
